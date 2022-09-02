@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
- [Приложение](https://owlspace.github.io/mesto-react)
+ [Приложение](https://owlspace.github.io/react-mesto-auth)
 
 Mesto - интерактивная страница, где можно добавлять фотографии, удалять их и ставить лайки.
 
