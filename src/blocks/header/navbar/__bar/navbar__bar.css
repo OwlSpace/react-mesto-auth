@@ -1,0 +1,8 @@
+@media screen and (max-width: 700px) {
+    .navbar__bar {
+        background-color: white;
+        height: 3px;
+        width: 24px;
+        transition: 0.2s;
+    }
+}

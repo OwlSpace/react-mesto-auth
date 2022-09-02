@@ -1,0 +1,23 @@
+.info-user {
+    width: 336px;
+    margin: auto 0 auto 30px;
+    display: grid;
+    grid-template-columns: 1fr 24px;
+    row-gap: 16px;
+}
+
+@media screen and (max-width: 900px) {
+    .info-user {
+        max-width: 850px;
+        margin: 26px auto 36px;
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .info-user {
+        max-width: 282px;
+        grid-template-columns: 243px 18px;
+        row-gap: 10px;
+    }
+}

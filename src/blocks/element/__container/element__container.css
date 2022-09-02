@@ -1,0 +1,8 @@
+.element__container {
+    width: 246px;
+    margin: 22px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}

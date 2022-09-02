@@ -1,0 +1,15 @@
+.popup__section {
+    color: black;
+    background-color: #FFFFFF;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .popup__section {
+        max-width: 282px;
+        /*max-height: 308px;*/
+    }
+}

@@ -1,0 +1,11 @@
+.authorizations{
+    width: 358px;
+    margin: 60px auto 50px;
+}
+
+@media screen and (max-width: 500px) {
+    .authorizations {
+        max-width: 260px;
+        margin: 40px auto 80px;
+    }
+}

@@ -1,0 +1,22 @@
+.navbar__link {
+    margin: 0;
+    justify-self: end;
+    align-self: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #A9A9A9;
+    text-decoration: none;
+}
+
+.navbar__link:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    .navbar__link {
+        justify-self: center;
+    }
+}

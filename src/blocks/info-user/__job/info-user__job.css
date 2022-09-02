@@ -1,0 +1,24 @@
+.info-user__job{
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 900px) {
+    .info-user__job {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .info-user__job {
+        width: 282px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

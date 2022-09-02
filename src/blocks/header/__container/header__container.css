@@ -1,0 +1,10 @@
+.header__container {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+@media screen and (max-width: 700px) {
+    .header__container {
+        grid-template-columns: 1fr 54px;
+    }
+}

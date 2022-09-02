@@ -1,0 +1,20 @@
+.header__line {
+    content: '';
+    display: grid;
+    border-bottom: 1px solid #545454;
+    opacity: 0.7;
+    width: 100%;
+    padding-top: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    .header__line {
+        padding-top: 30px;
+    }
+    .header__line_small {
+        padding-top: 0;
+        padding-bottom: 40px;
+    }
+
+
+}

@@ -1,0 +1,16 @@
+.navbar__title {
+    margin: 0;
+    justify-self: end;
+    align-self: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+@media screen and (max-width: 700px) {
+    .navbar__title {
+        justify-self: center;
+        margin-bottom: 18px;
+    }
+}
