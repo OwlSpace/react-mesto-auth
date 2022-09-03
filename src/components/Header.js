@@ -1,24 +1,21 @@
 import logotip from "../images/logotip.svg";
 import React, {useState} from "react";
-import {Link, useLocation} from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 
-function Header({emailUser}) {
+function Header({emailUser, userLogout, history}) {
+
     const location = useLocation();
     const [openMenu, setOpenMenu] = useState(false);
-    const email = <p className="navbar__title">{location.pathname === '/react-mesto-auth' && emailUser}</p>;
-    const asd = <Link className="navbar__link" to={location.pathname === "/sign-up"
-        ? "/sign-in"
-        : location.pathname === "/sign-in"
-            ? "/sign-up"
-            : "/sign-in"}>
-        {
-            location.pathname === "/sign-up"
-                ? "Войти"
-                : location.pathname === "/sign-in"
-                ? "Регистрация"
-                : "Выйти"
+
+    function outputHandler() {
+        if (history.location.pathname === "/sign-in") {
+            history.push('/sign-up');
+        } else if (history.location.pathname === "/sign-up") {
+            history.push('/sign-in');
+        } else {
+            userLogout();
         }
-    </Link>;
+    }
 
     function hambHandler(e) {
         e.preventDefault();
@@ -32,8 +29,14 @@ function Header({emailUser}) {
     return (
         <header className="header">
             <div className={`header__popup-menu  ${openMenu && `header__popup-menu_open`}`}>
-                {email}
-                {asd}
+                <p className="navbar__title">{history.location.pathname === '/react-mesto-auth' && emailUser}</p>
+                <button className="navbar__button-link" type='button' onClick={outputHandler}>
+                    {location.pathname === "/sign-up"
+                        ? "Войти"
+                        : location.pathname === "/sign-in"
+                            ? "Регистрация"
+                            : "Выйти"}
+                </button>
                 <div className="header__line header__line_small"/>
             </div>
             <div className="header__container">
@@ -47,8 +50,14 @@ function Header({emailUser}) {
                             <span className="navbar__bar"/>
                         </div>
                         <div className="navbar__menu">
-                            {email}
-                            {asd}
+                            <p className="navbar__title">{history.location.pathname === '/react-mesto-auth' && emailUser}</p>
+                            <button className="navbar__button-link" type='button' onClick={outputHandler}>
+                                {location.pathname === "/sign-up"
+                                    ? "Войти"
+                                    : location.pathname === "/sign-in"
+                                        ? "Регистрация"
+                                        : "Выйти"}
+                            </button>
                         </div>
                     </div>
                 </nav>

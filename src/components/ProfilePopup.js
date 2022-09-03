@@ -59,7 +59,7 @@ function ProfilePopup({isOpen, onClose, onUpdateUser}) {
                        minLength="2"
                        maxLength="200"
                        required/>
-                <span className="input-job-error popup__error"></span>
+                <span className="input-job-error popup__error"/>
             </label>
 
         </PopupWithForm>

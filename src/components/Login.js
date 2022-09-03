@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import FormLoginOrRegister from "./FormLoginOrRegister";
 
 function Login({onLogin}) {
     const [email, setEmail] = useState('');
@@ -18,31 +19,16 @@ function Login({onLogin}) {
     }
 
     return (
-
-        <form className="authorizations" onSubmit={handleSubmit}>
-            <p className="authorizations__title">Вход</p>
-            <label>
-                <input
-                    className="authorizations__input"
-                    placeholder="Email"
-                    minLength="2"
-                    maxLength="30"
-                    onChange={handleEmailChange}
-                />
-            </label>
-            <label>
-                <input
-                    className="authorizations__input"
-                    placeholder="Пароль"
-                    type="password"
-                    minLength="4"
-                    maxLength="15"
-                    onChange={handlePasswordChange}
-                />
-            </label>
-            <button className="authorizations__button">Войти</button>
-
-        </form>
+        <FormLoginOrRegister
+            onSubmit={handleSubmit}
+            title={'Вход'}
+            onEmail={handleEmailChange}
+            email={email}
+            onPassword={handlePasswordChange}
+            password={password}
+            buttonName={'Войти'}
+        >
+        </FormLoginOrRegister>
     )
 
 }

@@ -1,4 +1,4 @@
-.navbar__link {
+.navbar__button-link {
     margin: 0;
     justify-self: end;
     align-self: center;
@@ -6,17 +6,20 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
+    background-color: black;
+    border: none;
     color: #A9A9A9;
-    text-decoration: none;
+    /*text-decoration: none;*/
+
 }
 
-.navbar__link:hover {
+.navbar__button-link:hover {
     opacity: 0.5;
     cursor: pointer;
 }
 
 @media screen and (max-width: 700px) {
-    .navbar__link {
+    .navbar__button-link {
         justify-self: center;
     }
 }

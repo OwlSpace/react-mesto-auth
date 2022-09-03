@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Route, Switch, Redirect, useHistory} from 'react-router-dom';
+import {Route, Switch, useHistory} from 'react-router-dom';
 import '../index.css';
 import Header from "./Header";
 import Main from "./Main";
@@ -44,13 +44,15 @@ function App() {
     });
 
     useEffect(() => {
-        Promise.all([api.getUserInfo(), api.getInitialCards()])
-            .then(([infoProfile, cards]) => {
-                setCurrentUser(infoProfile);
-                setCards(cards);
-            })
-            .catch((err) => console.log(err));
-    }, []);
+       if (loggedIn) {
+            Promise.all([api.getUserInfo(), api.getInitialCards()])
+                .then(([infoProfile, cards]) => {
+                    setCurrentUser(infoProfile);
+                    setCards(cards);
+                })
+                .catch((err) => console.log(err));
+        }
+    }, [loggedIn]);
 
     function handleEditAvatarClick() {
         setIsEditAvatarPopupOpen(true);
@@ -195,6 +197,12 @@ function App() {
 
     }
 
+    function userLogout() {
+        localStorage.removeItem('jwt');
+        setLoggedIn(false);
+        history.push('/sign-in');
+    }
+
     return (
         <div className="App">
 
@@ -202,6 +210,8 @@ function App() {
 
                 <Header
                     emailUser={emailUser}
+                    userLogout={userLogout}
+                    history={history}
                 />
 
                 <Switch>
@@ -228,10 +238,6 @@ function App() {
                         <Register
                             onRegister={regist}
                         />
-                    </Route>
-
-                    <Route>
-                        {loggedIn ? <Redirect to="/react-mesto-auth"/> : <Redirect to="/sign-in"/>}
                     </Route>
 
                 </Switch>
